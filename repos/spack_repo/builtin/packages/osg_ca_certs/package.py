@@ -47,6 +47,9 @@ class OsgCaCerts(Package):
         destination="letsencrypt-certificates-master",
     )
 
+    depends_on("gmake", type="build")
+    depends_on("perl", type="build")
+
     depends_on("openssl")
 
     def setup_build_environment(self, env: EnvironmentModifications) -> None:
